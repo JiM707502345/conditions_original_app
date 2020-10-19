@@ -1,0 +1,5 @@
+<%= form_with model: @condition, local: true, class:"form" do |f| %>
+  <%= f.text_field :nickname, placeholder:"ニックネームを入力してください(※必須)", class:"text-box" %>
+  <%= f.text_field :point, placeholder:"点数の結果を入力してください(※必須)",class:"text-box"  %>
+  <%= f.submit "記録する", class:"submit-btn" %>
+<% end %>

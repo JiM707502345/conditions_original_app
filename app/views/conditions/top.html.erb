@@ -1,0 +1,34 @@
+<div class="created_at-desc">
+<h2 class="h2">直近の利用ユーザー</h2>
+  <% @conditions_created_at.each do |created_at| %>
+    <%= created_at.nickname %>：
+    <%= "#{created_at.point}点" %>：
+    <%= created_at.created_at.to_s(:datetime_jp) %><br>
+  <% end %>
+</div>
+
+<div class="top-page">
+  <div class="introduction">
+    <p class="condition"><strong>あなたの力</strong>を引き出す究極の体調診断<p>
+    <%= link_to '診断する', conditions_path, method: :get, class:"lets-condition" %>
+  </div>
+  <div class="score">
+      <p>90 ~ 100点：極楽浄土</p>
+      <p>80 ~ 90点：天道</p>
+      <p>70 ~ 80点：人間道</p>
+      <p>60 ~ 70点：修羅道</p>
+      <p>50 ^ 60点：畜生道</p>
+      <p>40 ~ 50点：餓鬼道</p>
+      <p>30点以下：地獄道</p>
+  </div>
+</div>
+
+<div class="point-asc">
+<h2 class="h2">点数の順位</h2>
+  <% @conditions_point.each.with_index(1) do |point,i| %>
+    <%= i  %>位：
+    <%= point.nickname %>：
+    <%= "#{point.point}点" %>：
+    <%= point.created_at.to_s(:datetime_jp) %><br>
+  <% end %>
+</div>
